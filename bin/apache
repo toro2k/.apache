@@ -1,0 +1,16 @@
+#!/bin/sh
+
+APACHE_DIR=~/.apache/
+export APACHE_DIR
+
+apache="/usr/sbin/apache2 -f ${APACHE_DIR}/apache.conf"
+
+case $1 in
+
+    start|stop|restart)
+        $apache -k $1 ;;
+
+    check)
+        $apache -t ;;
+
+esac
