@@ -1,6 +1,6 @@
 #!/bin/sh
 
-APACHE_DIR=~/.apache/
+APACHE_DIR=~/.apache
 export APACHE_DIR
 
 apache="/usr/sbin/apache2 -f ${APACHE_DIR}/apache.conf"
