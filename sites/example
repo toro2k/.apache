@@ -1,0 +1,4 @@
+Listen 10080
+<VirtualHost *:10080>
+DocumentRoot $HOME/www
+</VirtualHost>
