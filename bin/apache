@@ -2,6 +2,8 @@
 
 APACHE_DIR=~/.apache
 export APACHE_DIR
+export SERVER_NAME=$(hostname)
+
 
 apache="/usr/sbin/apache2 -f ${APACHE_DIR}/apache.conf"
 
