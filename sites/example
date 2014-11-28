@@ -1,4 +1,14 @@
 Listen 10080
 <VirtualHost *:10080>
-DocumentRoot $HOME/www
+
+DocumentRoot $HOME/www/example
+
+CustomLog ${APACHE_DIR}/log/example
+
+Include ${APACHE_DIR}/conf.d/php.conf
+
+<Directory ${HOME}/www/example>
+AllowOverride All
+</Directory>
+
 </VirtualHost>
