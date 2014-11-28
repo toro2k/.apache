@@ -3,7 +3,7 @@ Listen 10080
 
 DocumentRoot $HOME/www/example
 
-CustomLog ${APACHE_DIR}/log/example
+CustomLog ${APACHE_DIR}/log/example simple
 
 Include ${APACHE_DIR}/conf.d/php.conf
 
