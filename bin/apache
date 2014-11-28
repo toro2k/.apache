@@ -4,8 +4,11 @@ APACHE_DIR=~/.apache
 export APACHE_DIR
 export SERVER_NAME=$(hostname)
 
-
 apache="/usr/sbin/apache2 -f ${APACHE_DIR}/apache.conf"
+
+usage() {
+    echo "usage: apache start|stop|restart|check|status" 1>&2
+}
 
 case $1 in
 
@@ -15,4 +18,17 @@ case $1 in
     check)
         $apache -t ;;
 
+    status)
+        if [ -f "${APACHE_DIR}/pid" ]; then
+            pid=$(cat "${APACHE_DIR}/pid")
+            echo "httpd (${pid}) is running"
+        else
+            echo "httpd (no pid file) not running"
+        fi
+        ;;
+
+    *)
+        usage
+        exit 1
+        ;;
 esac
